@@ -1,6 +1,6 @@
 
 
---3) Sã se listeze structura tabelelor din schema HR (EMPLOYEES, DEPARTMENTS, JOBS, JOB_HISTORY, LOCATIONS, COUNTRIES, REGIONS), observând tipurile de date ale coloanelor. 
+--3) SÄƒ se listeze structura tabelelor din schema HR (EMPLOYEES, DEPARTMENTS, JOBS, JOB_HISTORY, LOCATIONS, COUNTRIES, REGIONS), observÃ¢nd tipurile de date ale coloanelor. 
 
 desc employees;
 desc departments;
@@ -10,57 +10,57 @@ desc locations;
 desc countries;
 desc regions;
 
---4) Sã se listeze conşinutul tabelelor din schema consideratã, afiºând valorile tuturor câmpurilor. 
+--4) SÄƒ se listeze conÅ£inutul tabelelor din schema consideratÄƒ, afiÅŸÃ¢nd valorile tuturor cÃ¢mpurilor. 
 
 select * from employees;
 
---5) Sã se afiºeze codul angajatului, numele, codul job-ului, data angajarii. Ce fel de operaşie este aceasta (selecşie sau proiecşie)? 
+--5) SÄƒ se afiÅŸeze codul angajatului, numele, codul job-ului, data angajarii. Ce fel de operaÅ£ie este aceasta (selecÅ£ie sau proiecÅ£ie)? 
 
 select employee_id, last_name, job_id, hire_date
 from employees; -- PROIECTIE
 
---6)Modifica?i cererea anterioarã astfel încât, la rulare, capetele coloanelor sã aibã numele cod, nume, cod job, data angajarii. 
+--6)ModificaÈ›i cererea anterioarÄƒ astfel Ã®ncÃ¢t, la rulare, capetele coloanelor sÄƒ aibÄƒ numele cod, nume, cod job, data angajarii. 
 
 select employee_id "cod", last_name "nume", job_id "cod job", hire_date "data angajarii" 
 from employees; --proiectie
 
---7) Sã se listeze, cu ºi fãrã duplicate, codurile job-urilor din tabelul EMPLOYEES. 
+--7) SÄƒ se listeze, cu ÅŸi fÄƒrÄƒ duplicate, codurile job-urilor din tabelul EMPLOYEES. 
 
 select job_id
 from employees;
 select distinct job_id
 from employees;
 
---8) Sã se afiºeze numele concatenat cu job_id-ul, separate prin virgula ?i spatiu. Eticheta?i coloana “Angajat si titlu”. 
+--8) SÄƒ se afiÅŸeze numele concatenat cu job_id-ul, separate prin virgula È™i spatiu. EtichetaÈ›i coloana â€œAngajat si titluâ€. 
 
 select last_name || ', ' || job_id "Angajat si titlu"
 from employees;
 
---9) Crea?i o cerere prin care sã se afi?eze toate datele din tabelul EMPLOYEES pe o singurã coloanã. Separaşi fiecare coloanã printr-o virgulã. Etichetati coloana ”Informatii complete”. 
+--9) CreaÈ›i o cerere prin care sÄƒ se afiÈ™eze toate datele din tabelul EMPLOYEES pe o singurÄƒ coloanÄƒ. SeparaÅ£i fiecare coloanÄƒ printr-o virgulÄƒ. EtichetaÈ›i coloana â€Informatii completeâ€. 
 
 select last_name || ', ' || job_id || ', ' || hire_date || ', ' || salary "Informatii complete"
 from employees;
 
---10) Sã se listeze numele si salariul angajaşilor care câºtigã mai mult de 2850. 
+--10) SÄƒ se listeze numele si salariul angajaÅ£ilor care cÃ¢ÅŸtigÄƒ mai mult de 2850. 
 
 select last_name, salary 
 from employees
 where salary>2850;
 
---11) Sã se creeze o cerere pentru a afiºa numele angajatului ºi codul departamentului pentru angajatul având codul 104. 
+--11) SÄƒ se creeze o cerere pentru a afiÅŸa numele angajatului ÅŸi codul departamentului pentru angajatul avÃ¢nd codul 104. 
 
 select last_name, department_id
 from employees
 where employee_id=104;
 
---12) Sã se afiºeze numele ºi salariul angajaşilor al cãror salariu nu se aflã în intervalul [1500, 2850]. 
+--12) SÄƒ se afiÅŸeze numele ÅŸi salariul angajaÅ£ilor al cÄƒror salariu nu se aflÄƒ Ã®n intervalul [1500, 2850]. 
 
 select last_name, salary  
 from employees
 where salary not between 1500 and 2850;
 
 
---13) Sã se afiºeze numele, job-ul ºi data la care au început lucrul salariaşii angajaşi între 20 Februarie 1987 ºi 1 Mai 1989. Rezultatul va fi ordonat crescãtor dupã data de început. 
+--13) SÄƒ se afiÅŸeze numele, job-ul ÅŸi data la care au Ã®nceput lucrul salariaÅ£ii angajaÅ£i Ã®ntre 20 Februarie 1987 ÅŸi 1 Mai 1989. Rezultatul va fi ordonat crescÄƒtor dupÄƒ data de Ã®nceput. 
 
 select sysdate from dual;
 
@@ -69,7 +69,7 @@ from employees
 where hire_date between '20-02-1987' and '1-02-1989'
 order by hire_date;
 
---14) Sã se afiºeze numele salariaşilor ºi codul departamentelor pentru toti angajaşii din departamentele 10, 30 ?i 50 în ordine alfabeticã a numelor. 
+--14) SÄƒ se afiÅŸeze numele salariaÅ£ilor ÅŸi codul departamentelor pentru toti angajaÅ£ii din departamentele 10, 30 Ã®i 50 Ã®n ordine alfabeticÄƒ a numelor. 
 
 select last_name, department_id
 from employees
@@ -82,13 +82,13 @@ from employees
 where department_id in (10,30,50)
 order by last_name;
 
---15) Sã se listeze numele ºi salariile angaja?ilor care câºtigã mai mult decât 1500 ºi lucreazã în departamentul 10, 30 sau 50. Se vor eticheta coloanele drept Angajat si Salariu lunar. 
+--15) SÄƒ se listeze numele ÅŸi salariile angajaÈ›ilor care cÃ¢ÅŸtigÄƒ mai mult decÃ¢t 1500 ÅŸi lucreazÄƒ Ã®n departamentul 10, 30 sau 50. Se vor eticheta coloanele drept Angajat si Salariu lunar. 
 
 select last_name "Angajat", salary "Salariu lunar"
 from employees 
 where salary>1500 and department_id in (10,30,50);
 
---16) Care este data curentã? Afiºaşi diferite formate ale acesteia. 
+--16) Care este data curentÄƒ? AfiÅŸaÅ£i diferite formate ale acesteia. 
 
 select sysdate
 from dual;
@@ -99,7 +99,7 @@ from employees;
 select to_char(sysdate, 'dd-mon-year hh24:mi:ss')
 from dual;
 
---17) Sã se afi?eze numele ºi data angajãrii pentru fiecare salariat care a fost angajat în 1987. Se cer 2 soluşii: una în care se lucreazã cu formatul implicit al datei ºi alta prin care se formateazã data. 
+--17) SÄƒ se afiÈ™eze numele ÅŸi data angajÄƒrii pentru fiecare salariat care a fost angajat Ã®n 1987. Se cer 2 soluÅ£ii: una Ã®n care se lucreazÄƒ cu formatul implicit al datei ÅŸi alta prin care se formateazÄƒ data. 
 
 select last_name, hire_date
 from employees
@@ -109,26 +109,26 @@ select last_name, hire_date
 from employees
 where hire_date like ('%1987%');
 
---18) Sã se afi?eze numele, prenumele ?i data angajãrii persoanelor care au început activitatea într-o zi a lunii egalã cu cea a datei curente. 
+--18) SÄƒ se afiÈ™eze numele, prenumele È™i data angajÄƒrii persoanelor care au Ã®nceput activitatea Ã®ntr-o zi a lunii egalÄƒ cu cea a datei curente. 
 
 select last_name, first_name, hire_date 
 from employees 
 where to_char(hire_date, 'dd')= to_char(sysdate, 'dd');
 
---19) Sã se afiºeze numele ºi job-ul pentru toşi angajaşii care nu au manager. 
+--19) SÄƒ se afiÅŸeze numele ÅŸi job-ul pentru toÅ£i angajaÅ£ii care nu au manager. 
 
 select last_name, job_id
 from employees
 where manager_id is null;
 
---20) Sã se afi?eze numele, salariul ?i comisionul pentru toti salaria?ii care câ?tigã comision (se presupune cã aceasta înseamnã prezen?a unei valori nenule în coloana respectivã). Sã se sorteze datele în ordine descrescãtoare a salariilor ?i comisioanelor. 
+--20) SÄƒ se afiÈ™eze numele, salariul È™i comisionul pentru toti salariaÈ›ii care cÃ¢È™tigÄƒ comision (se presupune cÄƒ aceasta Ã®nseamnÄƒ prezenÈ›a unei valori nenule Ã®n coloana respectivÄƒ). SÄƒ se sorteze datele Ã®n ordine descrescÄƒtoare a salariilor È™i comisioanelor. 
 
 select last_name, salary, commission_pct
 from employees 
 where commission_pct is not null
 order by  salary desc,  commission_pct desc ;
 
---21) Eliminaşi clauza WHERE din cererea anterioarã. Unde sunt plasate valorile NULL în ordinea descrescãtoare? 
+--21) EliminaÅ£i clauza WHERE din cererea anterioarÄƒ. Unde sunt plasate valorile NULL Ã®n ordinea descrescÄƒtoare? 
 
 select last_name, salary, commission_pct
 from employees 
@@ -136,27 +136,27 @@ order by  salary desc,  commission_pct desc;
 
 
 
---22) Sã se listeze numele tuturor angaja?ilor care au a treia literã din nume ‘A’. 
+--22) SÄƒ se listeze numele tuturor angajaÈ›ilor care au a treia literÄƒ din nume â€˜Aâ€™. 
 
 select last_name
 from employees 
 where last_name like '__a%';
 
---23) Sã se listeze numele tuturor angajatilor care au 2 litere ‘L’ in nume ºi lucreazã în departamentul 30 sau managerul lor este 102. 
+--23) SÄƒ se listeze numele tuturor angajaÈ›ilor care au 2 litere â€˜Lâ€™ in nume ÅŸi lucreazÄƒ Ã®n departamentul 30 sau managerul lor este 102. 
 
 
 select last_name
 from employees
 where (upper(last_name) like ('%L%L%') and department_id=30)  or manager_id=102;
 
---24) Sã se afiseze numele, job-ul si salariul pentru toti salariatii al caror job conşine ºirul “CLERK” sau “REP” ?i salariul nu este egal cu 1000, 2000 sau 3000. (operatorul NOT IN) 
+--24) SÄƒ se afiseze numele, job-ul si salariul pentru toti salariatii al caror job conÅ£ine ÅŸirul â€œCLERKâ€ sau â€œREPâ€ È™i salariul nu este egal cu 1000, 2000 sau 3000. (operatorul NOT IN) 
 
 select last_name, job_id, salary
 from employees 
 where (job_id like '%CLERK%' or   job_id like '%REP%') and salary not in (1000,2000,3000);
 
 
---25) Sã se afi?eze numele departamentelor care nu au manager. 
+--25) SÄƒ se afiÈ™eze numele departamentelor care nu au manager. 
 
 select distinct department_name
 from departments
