@@ -1,5 +1,3 @@
-
-
 --3) Să se listeze structura tabelelor din schema HR (EMPLOYEES, DEPARTMENTS, JOBS, JOB_HISTORY, LOCATIONS, COUNTRIES, REGIONS), observând tipurile de date ale coloanelor. 
 
 desc employees;
@@ -58,7 +56,6 @@ where employee_id=104;
 select last_name, salary  
 from employees
 where salary not between 1500 and 2850;
-
 
 --13) Să se afişeze numele, job-ul şi data la care au început lucrul salariaţii angajaţi între 20 Februarie 1987 şi 1 Mai 1989. Rezultatul va fi ordonat crescător după data de început. 
 
@@ -134,8 +131,6 @@ select last_name, salary, commission_pct
 from employees 
 order by  salary desc,  commission_pct desc;
 
-
-
 --22) Să se listeze numele tuturor angajaților care au a treia literă din nume ‘A’. 
 
 select last_name
@@ -143,7 +138,6 @@ from employees
 where last_name like '__a%';
 
 --23) Să se listeze numele tuturor angajaților care au 2 litere ‘L’ in nume şi lucrează în departamentul 30 sau managerul lor este 102. 
-
 
 select last_name
 from employees
@@ -155,23 +149,8 @@ select last_name, job_id, salary
 from employees 
 where (job_id like '%CLERK%' or   job_id like '%REP%') and salary not in (1000,2000,3000);
 
-
 --25) Să se afișeze numele departamentelor care nu au manager. 
 
 select distinct department_name
 from departments
 where manager_id is null;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
